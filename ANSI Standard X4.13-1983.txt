@@ -1,0 +1,19 @@
+First Digits (MII Major iNdustry Indetifier)
+# are random numbers
+X are the active numbers
+1 Airlines
+2 Airlines
+3 Travel Entertainment
+	34 American Express
+	36 Dinners Club (see 38)
+	37 American Express
+		37XX type and currency
+		37##XXXXXXX Account Number
+	38 Carte Blanche & Dinners Club (see 36)
+4 Visa
+	4XXXXX bank Numbers
+	4######XXXXXXXXX Account Number
+5 Mastercard
+	5XXXXX Bank Account
+	5##### Remaing numbers are account number
+6 Discover
