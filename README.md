@@ -1,2 +1,2 @@
 # Magstripe Decoder
-Used to display magstripe date in a shell
+Used to display magstripe track 1 data in a shell
