@@ -16,7 +16,7 @@ function parseCardNumber() { #defines function
 			echo -e "\tDinners Club"
 			;;
 		[7])
-			echo -e "\tAmerican Express"	
+			echo -e "\tAmerican Express"
 			echo -e "\tType and currency: ${1:2:2}" #FEATURE: Find out what this means
 			echo -e "\tAccount Number: ${1:4:7}"
 			echo -e "\tCheck Digit: ${1:11}"
@@ -27,15 +27,20 @@ function parseCardNumber() { #defines function
 		esac
 		;;
 	[4]) #Banking and Financial Institutions Visa Cards
-		echo -e "\tVisa Card"	
-		echo -e "\tBank Number: ${1:0:6}"
+		echo -e "\tVisa Card"
+		#checks the bank based on the first digits of the card
+		echo -e -n "\tBank: "
+			#greps the file that has all bank information and finds the line with bank information
+			cat United\ States\ Credit\ Card\ IIN\ List\ -\ creditcardvalidator.org.csv| grep ${1:0:6} | awk -F',' '{printf $2}'
+			#prints bank number on same line
+			echo -e " (${1:0:6})"
 		echo -e "\tAccount Number: ${1:6:9}"
 		echo -e "\tCheck Digit: ${1:15}"
 		;;
 	[5]) #Banking and Financial Institutions Master Card
 		case ${1:1:1} in
 		[1-5])
-			echo -e "\tMaster Card"	
+			echo -e "\tMaster Card"
 			echo -e "\tBank Number: ${1:0:6}" #FEATURE: Bank Number length depends on the second digit and I have not yet implemented this completely
 			echo -e "\tAccount Number: ${1:6:9}"
 			echo -e "\tCheck Digit: ${1:15}"
