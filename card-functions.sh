@@ -31,7 +31,7 @@ function parseCardNumber() { #defines function
 		#checks the bank based on the first digits of the card
 		echo -e -n "\tBank: "
 			#greps the file that has all bank information and finds the line with bank information
-			cat United\ States\ Credit\ Card\ IIN\ List\ -\ creditcardvalidator.org.csv| grep ${1:0:6} | awk -F',' '{printf $2}'
+			cat United\ States\ Credit\ Card\ IIN\ List\ -\ creditcardvalidator.org.csv | grep ${1:0:6} | awk -F',' '{printf $2}'
 			#prints bank number on same line
 			echo -e " (${1:0:6})"
 		echo -e "\tAccount Number: ${1:6:9}"
